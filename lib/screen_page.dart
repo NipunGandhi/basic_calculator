@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -62,7 +63,15 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Calculator"),
+        title: const Center(
+          child: Text(
+            "Calculator",
+            style: TextStyle(
+              fontSize: 23,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
       ),
       body: Container(
         color: Colors.white,
@@ -74,7 +83,7 @@ class _HomePageState extends State<HomePage> {
               "Output : $output",
               style: const TextStyle(
                   color: Colors.black,
-                  fontSize: 20,
+                  fontSize: 30,
                   fontWeight: FontWeight.bold),
             ),
             Input(
@@ -102,13 +111,13 @@ class _HomePageState extends State<HomePage> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 ownButton(sign: "/"),
-                ownButton(sign:"*"),
+                ownButton(sign: "*"),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ownButton(sign: "Clear", abc: Colors.green),
+                ownButton(sign: "Clear", abc: Colors.grey),
               ],
             ),
           ],
